@@ -20,13 +20,10 @@ export default defineConfig((env) => ({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  build: {
-    minify: false,
-    rollupOptions: {
-      external: Object.keys(pkg.dependencies),
-      output: {
-        globals: Object.fromEntries(Object.keys(pkg.dependencies).map((v) => [v, v])),
-      },
+build: {
+  outDir: 'dist', // Change from 'lib' to 'dist'
+  // other settings...
+},
     },
     outDir: 'lib',
     lib: {
